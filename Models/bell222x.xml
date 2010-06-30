@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>bell222x.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Bell-222X/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>tail</object-name>
+    <object-name>winglets</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>derive</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>sorties</object-name>
+    <object-name>echappes</object-name>
+    <object-name>trous</object-name>
+    <object-name>bloqueG</object-name>
+    <object-name>gunsG</object-name>
+    <object-name>bloqueD</object-name>
+    <object-name>gunsD</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>lancesmissiles</object-name>
+
+    <!-- Transparence -->
+    <object-name>vitres</object-name>
+    <object-name>vitreG</object-name>
+    <object-name>vitreD</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>lampetoit</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>tail</object-name>
+    <object-name>winglets</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>derive</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>sorties</object-name>
+    <object-name>echappes</object-name>
+    <object-name>trous</object-name>
+    <object-name>bloqueG</object-name>
+    <object-name>gunsG</object-name>
+    <object-name>bloqueD</object-name>
+    <object-name>gunsD</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>lancesmissiles</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+<!--
+    <diffuse>
+      <red-prop>diffuse/red</red-prop>
+      <green-prop>diffuse/green</green-prop>
+      <blue-prop>diffuse/blue</blue-prop>
+    </diffuse>
+
+    <ambient>
+      <red-prop>ambient/red</red-prop>
+      <green-prop>ambient/green</green-prop>
+      <blue-prop>ambient/blue</blue-prop>
+    </ambient>
+-->
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+<!--
+    <shininess>
+      <shininess-prop>shininess</shininess-prop>
+    </shininess>
+-->
+  </animation>
+  
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>tail</object-name>
+    <object-name>winglets</object-name>
+    <object-name>derive</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>sorties</object-name>
+    <object-name>bloqueG</object-name>
+    <object-name>bloqueD</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+  </effect>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitres</object-name>
+    <object-name>vitreG</object-name>
+    <object-name>vitreD</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitres</object-name>
+    <object-name>vitreG</object-name>
+    <object-name>vitreD</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>lampetoit</object-name>
+  </animation>
+
+  <!-- Rentré des roues Temporairement disparition/apparition des roues -->
+  <animation>
+    <type>select</type>
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <condition>
+      <not>
+        <equals>
+          <property>gear/gear[0]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </not>
+    </condition>
+  </animation>
+
+  <!-- Intérieur -->
+  <model>
+    <path>Aircraft/Bell-222X/Models/Interior/interior.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotor principale -->
+  <model>
+    <path>Aircraft/Bell-222X/Models/MainRotor/mainrotor.xml</path>
+    <offsets>
+      <x-m> -0.831 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.697 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotor de queue -->
+  <model>
+    <path>Aircraft/Bell-222X/Models/TailRotor/tailrotor.xml</path>
+    <offsets>
+      <x-m>  7.348 </x-m>
+      <y-m> -0.461 </y-m>
+      <z-m>  0.659 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <name>LesArmes</name>
+    <object-name>gunsG</object-name>
+    <object-name>gunsD</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LesArmes</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.25 </dep></entry>
+      <entry><ind> 0.5 </ind><dep> 0.25 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.00 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>ArmesGauches</name>
+    <object-name>bloqueG</object-name>
+    <object-name>gunsG</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>LightLeft</object-name>
+    <object-name>StrobetLeft</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>ArmesGauches</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.4 </dep></entry>
+      <entry><ind> 0.5 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>ArmesDroites</name>
+    <object-name>bloqueD</object-name>
+    <object-name>gunsD</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>LightRight</object-name>
+    <object-name>StrobetRight</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>ArmesDroites</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> -0.4 </dep></entry>
+      <entry><ind> 0.5 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep>  0.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>LesPortes1</name>
+    <object-name>porteG1</object-name>
+    <object-name>porteD1</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LesPortes1</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.000 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.006 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.006 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>porteG1</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.4 </ind><dep> -0.15 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -0.15 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>porteG2</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.6 </ind><dep> -0.30 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -0.30 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>LesPortes2</name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD2</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LesPortes2</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.000 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.006 </dep></entry>
+      <entry><ind> 0.4 </ind><dep> 0.012 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.012 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>porteD1</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.4 </ind><dep> 0.15 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.15 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>porteD2</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.6 </ind><dep> 0.30 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 0.30 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>lancesmissiles</object-name>
+    <property>instrumentation/doors/guns/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 0.6 </ind><dep>  0.00 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> -0.21 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Porte avant gauche -->
+  <animation>
+    <name>PorteAvantGauche</name>
+    <object-name>porteG</object-name>
+    <object-name>vitreG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteAvantGauche</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <factor> -60 </factor>
+    <axis>
+      <x1-m> -3.850 </x1-m>
+      <y1-m> -0.899 </y1-m>
+      <z1-m> -0.909 </z1-m>
+      <x2-m> -3.850 </x2-m>
+      <y2-m> -0.962 </y2-m>
+      <z2-m> -0.474 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Porte avant droite -->
+  <animation>
+    <name>PorteAvantDroite</name>
+    <object-name>porteD</object-name>
+    <object-name>vitreD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PorteAvantDroite</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x1-m> -3.850 </x1-m>
+      <y1-m>  0.899 </y1-m>
+      <z1-m> -0.909 </z1-m>
+      <x2-m> -3.850 </x2-m>
+      <y2-m>  0.962 </y2-m>
+      <z2-m> -0.474 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/Bell-222X/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> 0.085 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 1.341 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Bell-222X/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m> 7.914 </x-m>
+      <y-m> 0.123 </y-m>
+      <z-m> 2.150 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>LightLeft</name>
+    <path>Aircraft/Bell-222X/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m> -0.400 </x-m>
+      <y-m> -2.551 </y-m>
+      <z-m> -0.656 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>StrobetLeft</name>
+    <path>Aircraft/Bell-222X/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m> -0.390 </x-m>
+      <y-m> -2.551 </y-m>
+      <z-m> -0.656 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>LightRight</name>
+    <path>Aircraft/Bell-222X/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m> -0.400 </x-m>
+      <y-m>  2.551 </y-m>
+      <z-m> -0.656 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>StrobetRight</name>
+    <path>Aircraft/Bell-222X/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m> -0.390 </x-m>
+      <y-m>  2.551 </y-m>
+      <z-m> -0.656 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
+
