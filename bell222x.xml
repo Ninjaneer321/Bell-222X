@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?> 
 
-<!-- Dauohin d'après l'OH-1 de TAT en attendant beaucoup mieux :( -->
+<!-- Dauphin d'après l'OH-1 de TAT en attendant beaucoup mieux :( -->
 <airplane mass="5400">
 
   <approach speed="47" aoa="5">
