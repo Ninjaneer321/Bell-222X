@@ -15,6 +15,19 @@ Bell 222 X (version Supercopter). BARANGER Emmanuel 2010
     <status>alpha</status>
     <license>GPL v2</license>
 
+    <tags>
+      <tag>bell</tag>
+      <tag>helicopter</tag>
+      <tag>tricycle</tag>
+      <tag>retractable-gear</tag>
+      <tag>single-engine</tag>
+      <tag>turboprop</tag>
+      <tag>tarnsport</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+    </tags>
+
     <flight-model>yasim</flight-model>
     <aero>bell222x</aero>
     <fuel-fraction>0.8</fuel-fraction>
